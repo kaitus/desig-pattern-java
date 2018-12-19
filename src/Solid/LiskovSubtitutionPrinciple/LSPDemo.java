@@ -7,11 +7,7 @@ public class LSPDemo {
         useIt(rc);
 
         Rectangle sq = new Square();
-<<<<<<< HEAD
         sq.setHeight(10);
-=======
-        sq.setHeight(5);
->>>>>>> 6ae76fa1a2bdf6297083394ccdd162336334c55e
         sq.setWidth(10);
         useIt(sq);
     }

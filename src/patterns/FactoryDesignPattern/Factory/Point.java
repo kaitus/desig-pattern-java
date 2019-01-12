@@ -12,7 +12,8 @@ class Point {
     /**
      * Mala practica de desarrollo, se soluciona con el patron de diseño FACTORY
      */
-    /* public Point(double a, double b, CoordinateSystem cs) {
+    /*
+    public Point(double a, double b, CoordinateSystem cs) {
         switch (cs) {
             case CARTESIAN:
                 this.x = a;
@@ -23,14 +24,19 @@ class Point {
                 this.y = a * Math.sin(b);
                 break;
         }
-    } */
-
-    public static Point newCartesianPoint(double x, double y) {
-        return new Point(x, y);
     }
+    */
 
-    public static Point newPolarPoint(double rho, double theta) {
-        return new Point(rho*Math.cos(theta), rho*Math.sin(theta));
+    public static class Factory {
+
+        public static Point newCartesianPoint(double x, double y) {
+            return new Point(x, y);
+        }
+
+        public static Point newPolarPoint(double rho, double theta) {
+            return new Point(rho*Math.cos(theta), rho*Math.sin(theta));
+        }
+
     }
 
 }

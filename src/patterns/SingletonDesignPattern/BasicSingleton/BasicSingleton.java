@@ -1,6 +1,8 @@
 package patterns.SingletonDesignPattern.BasicSingleton;
 
-public class BasicSingleton {
+import java.io.Serializable;
+
+public class BasicSingleton implements Serializable {
 
     private BasicSingleton() {
     }
@@ -19,6 +21,10 @@ public class BasicSingleton {
 
     public void setValue(int value) {
         this.value = value;
+    }
+
+    protected Object readResolve() {
+        return INSTANCE;
     }
 
 }
